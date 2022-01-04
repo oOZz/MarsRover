@@ -43,9 +43,11 @@ namespace Serin.MarsRover
                     string[] roverInitialPosition = inputList[i].Split(" ");
                     string roverRoutes = inputList[i + 1]; 
 
-                    if (Enum.TryParse<Direction>(roverInitialPosition[2], out Direction direction) && Int32.TryParse(roverInitialPosition[0], out int x) && Int32.TryParse(roverInitialPosition[1], out int y))
+                    if (Enum.TryParse<Direction>(roverInitialPosition[2], out Direction direction) 
+                        && Int32.TryParse(roverInitialPosition[0], out int x) 
+                        && Int32.TryParse(roverInitialPosition[1], out int y))
                     {
-                        rover = new Rover(Convert.ToInt32(roverInitialPosition[0]), Convert.ToInt32(roverInitialPosition[1]), direction);
+                        rover = new Rover(x, y, direction);
                     }
                     else
                     {
